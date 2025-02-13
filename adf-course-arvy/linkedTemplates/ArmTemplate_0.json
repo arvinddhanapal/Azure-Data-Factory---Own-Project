@@ -22,6 +22,10 @@
 		"ManagerTrigger_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/77efc320-ec2a-403d-a4a0-6404ad0811a2/resourceGroups/sto-adb-arvy-project/providers/Microsoft.Storage/storageAccounts/storadfcourse1"
+		},
+		"ManTrigger_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/77efc320-ec2a-403d-a4a0-6404ad0811a2/resourceGroups/sto-adb-arvy-project/providers/Microsoft.Storage/storageAccounts/storadfcourse1"
 		}
 	},
 	"variables": {
@@ -56,6 +60,26 @@
 						"type": "SecureString",
 						"value": "[parameters('ls_adls_source_accountKey')]"
 					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ManagerTrigger')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [],
+				"type": "BlobEventsTrigger",
+				"typeProperties": {
+					"blobPathBeginsWith": "/source/blobs/csv files/Fact_Sales_1.csv",
+					"ignoreEmptyBlobs": true,
+					"scope": "[parameters('ManagerTrigger_properties_typeProperties_scope')]",
+					"events": [
+						"Microsoft.Storage.BlobCreated"
+					]
 				}
 			},
 			"dependsOn": []
@@ -924,12 +948,12 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ManagerTrigger')]",
+			"name": "[concat(parameters('factoryName'), '/ManTrigger')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Stopped",
+				"runtimeState": "Started",
 				"pipelines": [
 					{
 						"pipelineReference": {
@@ -943,7 +967,7 @@
 				"typeProperties": {
 					"blobPathBeginsWith": "/source/blobs/csv files/Fact_Sales_1.csv",
 					"ignoreEmptyBlobs": true,
-					"scope": "[parameters('ManagerTrigger_properties_typeProperties_scope')]",
+					"scope": "[parameters('ManTrigger_properties_typeProperties_scope')]",
 					"events": [
 						"Microsoft.Storage.BlobCreated"
 					]
