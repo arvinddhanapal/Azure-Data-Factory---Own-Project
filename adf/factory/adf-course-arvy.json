@@ -1,0 +1,9 @@
+{
+	"name": "adf-course-arvy",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "715eb5b8-f7bb-4f52-917f-0db0698787f2",
+		"tenantId": "731fc932-6084-458a-af01-6d778d82af06"
+	}
+}
