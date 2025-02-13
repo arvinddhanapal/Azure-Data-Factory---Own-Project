@@ -14,10 +14,10 @@
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
-				"frequency": "Hour",
+				"frequency": "Minute",
 				"interval": 16,
-				"startTime": "2025-02-13T19:43:00",
-				"endTime": "2025-02-13T19:59:00",
+				"startTime": "2025-02-13T19:47:00",
+				"endTime": "2025-02-13T20:00:00",
 				"timeZone": "GMT Standard Time"
 			}
 		}
