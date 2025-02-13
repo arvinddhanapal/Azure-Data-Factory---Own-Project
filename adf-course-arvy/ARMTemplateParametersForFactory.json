@@ -13,6 +13,9 @@
 		},
 		"ls_adls_source_properties_typeProperties_url": {
 			"value": "https://storadfcourse1.dfs.core.windows.net/"
+		},
+		"ManagerTrigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/77efc320-ec2a-403d-a4a0-6404ad0811a2/resourceGroups/sto-adb-arvy-project/providers/Microsoft.Storage/storageAccounts/storadfcourse1"
 		}
 	}
 }
