@@ -3,7 +3,31 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Get Metadata",
+				"name": "StoreFiles",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "Get Metadata_co",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "VarFiles",
+					"value": {
+						"value": "@activity('Get Metadata').output.childItems",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "Get Metadata_co",
 				"type": "GetMetadata",
 				"dependsOn": [],
 				"policy": {
@@ -29,30 +53,6 @@
 					},
 					"formatSettings": {
 						"type": "DelimitedTextReadSettings"
-					}
-				}
-			},
-			{
-				"name": "StoreFiles",
-				"type": "SetVariable",
-				"dependsOn": [
-					{
-						"activity": "Get Metadata",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"policy": {
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"variableName": "VarFiles",
-					"value": {
-						"value": "@activity('Get Metadata').output.childItems",
-						"type": "Expression"
 					}
 				}
 			}
