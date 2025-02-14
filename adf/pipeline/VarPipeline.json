@@ -7,7 +7,7 @@
 				"type": "SetVariable",
 				"dependsOn": [
 					{
-						"activity": "Get Metadata_co",
+						"activity": "Get Metadata",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -27,7 +27,7 @@
 				}
 			},
 			{
-				"name": "Get Metadata_co",
+				"name": "Get Metadata",
 				"type": "GetMetadata",
 				"dependsOn": [],
 				"policy": {
