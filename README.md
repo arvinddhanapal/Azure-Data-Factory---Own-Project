@@ -1,6 +1,4 @@
-# Azure-Data-Factory---Own-Project
-Azure Data Factory - Own Project
-This is my first project using Azure Data Factory (ADF), where I integrated Git with ADF Studio to enable version control for my data workflows. The project demonstrates how to create, manage, and automate data pipelines in Azure.
+This is my first project after my Masters graduation using Azure Data Factory (ADF), where I integrated Git with ADF Studio to enable version control for my data workflows. The project demonstrates how to create, manage, and automate data pipelines in Azure.
 
 Project Overview
 In this project, I built an end-to-end data pipeline to move and transform data between various sources and destinations. The key focus was on implementing Git integration, automating data flows, and ensuring data accuracy with orchestration features in ADF.
